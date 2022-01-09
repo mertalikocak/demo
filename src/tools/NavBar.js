@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function NavBar() {
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
+      <div class="container-fluid navbardiv">
         <button
           class="navbar-toggler"
           type="button"
@@ -48,43 +48,26 @@ function NavBar() {
                 aria-labelledby="navbarDropdownMenuLink"
               >
                 <li>
-                  <a class="dropdown-item" href="#">
-                    <Link className="menu_link_drop" to="#">
-                      C#
-                    </Link>
-                  </a>
+                  <Link class="dropdown-item" to="/csharp">
+                    C#
+                  </Link>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
-                    <Link className="menu_link_drop" to="#">
-                      Java
-                    </Link>
-                  </a>
+                  <Link class="dropdown-item" to="/java">
+                    Java
+                  </Link>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
-                    <Link className="menu_link_drop" to="#">
-                      Python
-                    </Link>
-                  </a>
+                  <Link class="dropdown-item" to="/python">
+                    Python
+                  </Link>
                 </li>
               </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
-            </li>
           </ul>
-          <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
+          <span class="navbar-text menu_text">
+            Gelecek Yazılımla Şekillenecek
+          </span>
         </div>
       </div>
     </nav>
