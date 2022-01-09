@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Languages() {
+function Language_Csharp() {
   return (
     <React.Fragment>
       <div>Languages</div>
@@ -11,4 +11,4 @@ function Languages() {
   );
 }
 
-export default Languages;
+export default Language_Csharp;
