@@ -30,8 +30,7 @@ function Home() {
               <br />
             </div>
             <div className="a_grid_button">
-              {" "}
-              <Link to="/csharp1" className="katilbutonu">
+              <Link to="/course/cs" className="katilbutonu">
                 <span>Derse Başla</span>
               </Link>
             </div>
@@ -62,7 +61,7 @@ function Home() {
               <br />
             </div>
             <div className="b_grid_button">
-              <Link to="/java1" className="katilbutonu">
+              <Link to="/course/js#" className="katilbutonu">
                 <span>Derse Başla</span>
               </Link>
             </div>
@@ -91,7 +90,7 @@ function Home() {
               <br />
             </div>
             <div className="c_grid_button">
-              <Link to="/python1" className="katilbutonu">
+              <Link to="/course/py" className="katilbutonu">
                 <span>Derse Başla</span>
               </Link>
             </div>

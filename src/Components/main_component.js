@@ -3,12 +3,11 @@ import Header from "./header_component";
 import Footer from "./footer_component";
 import Home from "../pages/Home";
 import About from "../pages/About";
-import Csharp from "../pages/csharp/csharp1";
-import Java from "../pages/javaScript/java1";
-import Python from "../pages/python/python1";
-import Csharp2 from "../pages/csharp/csharp2";
-import Python2 from "../pages/python/python2";
-import Java2 from "../pages/javaScript/java2";
+import Contact from "../pages/Contact";
+import Overview from "../pages/Course";
+import Lesson from "../pages/Lesson";
+import NotFound from "../pages/404";
+import ScrollToTop from "../ScrollToTop";
 
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 
@@ -17,18 +16,22 @@ function Main() {
     <React.Fragment>
       <div>
         <Header />
+        <ScrollToTop />
         <Switch>
-          <Route path="/home" component={Home} />
+          <Route path="/course/:course/:lessonNo">
+            <Lesson />
+          </Route>
+          <Route path="/course/:course">
+            <Overview />
+          </Route>
+
+          <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
-          <Route path="/csharp1" component={Csharp} />
-          <Route path="/csharp2" component={Csharp2} />
-          <Route path="/java1" component={Java} />
-          <Route path="/java2" component={Java2} />
-
-          <Route path="/python1" component={Python} />
-          <Route path="/python2" component={Python2} />
-
-          <Redirect to="/home" />
+          <Route path="/contact" component={Contact} />
+          <Route path="">
+            <NotFound />
+          </Route>
+          <Redirect path="/" />
         </Switch>
         <Footer />
       </div>

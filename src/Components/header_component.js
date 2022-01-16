@@ -26,10 +26,12 @@ function Header() {
   return (
     <div class="headerContainer">
       <div class="header_logo">
-        <h1 className="logo">Div Or Span</h1>
+        <Link to="/" className="logo">
+          &lt;Div Or Span/&gt;
+        </Link>
       </div>
       <div class="header_menu">
-        <Link to="/home" className="menu_item">
+        <Link to="/" className="menu_item">
           Ana Sayfa
         </Link>
         <div className="dropdown">
@@ -37,13 +39,13 @@ function Header() {
             Dersler ↓
           </button>
           <div id="myDropdown" class="dropdown-content">
-            <Link class="dropdown-item" to="/csharp1">
+            <Link class="dropdown-item" to="/course/cs">
               C#
             </Link>
-            <Link class="dropdown-item" to="/java1">
+            <Link class="dropdown-item" to="/course/js">
               JavaScript
             </Link>
-            <Link class="dropdown-item" to="/python1">
+            <Link class="dropdown-item" to="/course/py">
               Python
             </Link>
           </div>
@@ -51,14 +53,14 @@ function Header() {
         <Link to="/about" className="menu_item">
           Hakkımızda
         </Link>
-        <Link to="/about" className="menu_item">
+        <Link to="/contact" className="menu_item">
           İletişim
         </Link>
       </div>
       <div class="header_text">
-        <h5>
+        <p>
           <i>GELECEK YAZILIM İLE ŞEKİLLENECEK</i>
-        </h5>
+        </p>
       </div>
     </div>
   );

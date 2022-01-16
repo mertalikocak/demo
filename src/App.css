@@ -6,46 +6,72 @@
   gap: 0px 0px;
   grid-auto-flow: row;
   width: 100%;
-  height: 11vh;
+  height: 7.5vw;
+  /* From https://css.glass */
+  background: rgba(28, 83, 142, 0.836);
+
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.7px);
+  -webkit-backdrop-filter: blur(6.7px);
+  border: 1px solid rgba(29, 62, 44, 0.36);
+  z-index: 1;
+  position: fixed;
   padding-top: 1%;
-  background-color: #b7b7a4;
 }
 
 .header_logo {
   grid-area: 1 / 1 / 2 / 2;
   text-align: center;
+  margin-top: 2%;
+}
+.logo {
+  text-decoration: none;
+  color: white;
+  font-family: "Luxurious Roman", cursive;
+  font-size: 2.5vw;
+}
+.logo:hover {
+  color: black;
 }
 
 .header_menu {
   grid-area: 1 / 2 / 2 / 3;
   text-align: center;
+  margin: 2%;
 }
 
 .header_text {
   grid-area: 1 / 3 / 2 / 4;
-  padding-top: 4%;
+  padding-top: 3%;
   letter-spacing: 1px;
+  color: white;
+  font-size: 1.15vw;
+  margin-top: 5%;
 }
 .menu_item {
   text-decoration: none;
-  color: black;
-  padding: 16px;
-  font-size: 20px;
+  color: rgb(255, 255, 255);
+  padding: 0.7vw;
+  font-size: 1.3vw;
 }
 .menu_item:hover {
   color: white;
-  background-color: black;
+  background-color: rgb(15, 47, 82);
+  border-radius: 16px;
 }
 .dropbtn {
   background-color: rgba(255, 255, 255, 0);
-  padding: 16px;
+  padding: 0.7vw;
   font-size: 20px;
   border: none;
   cursor: pointer;
+  color: white;
+  font-size: 1.3vw;
 }
 .dropbtn:hover {
-  background-color: black;
+  background-color: rgb(15, 47, 82);
   color: white;
+  border-radius: 16px;
 }
 
 /* Dropdown button on hover & focus */
@@ -64,12 +90,13 @@
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  font-size: 1.1vw;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
   color: black;
-  padding: 12px 16px;
+  padding: 0.5vw 0.7vw;
   text-decoration: none;
   display: block;
 }
@@ -90,7 +117,7 @@
   grid-template-rows: 1fr 1fr 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
-  background-image: url("https://alfapeople.com/me/wp-content/uploads/sites/25/2016/01/AlfaPeople-Best-Practice-JavaScript-Code-Quality-780x551.jpg");
+  background-image: url("./img/bg.svg");
   padding: 1% 0% 1% 0%;
 }
 
@@ -103,20 +130,29 @@
 }
 
 .main_grid {
+  margin-top: 10%;
   grid-area: 1 / 2 / 4 / 3;
-  background-color: #f1faeeaf;
-  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.58);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.4px);
+  -webkit-backdrop-filter: blur(3.4px);
+  border: 1px solid rgba(255, 255, 255, 0.36);
 }
 .main_element {
   margin: 2% 2% 2% 2%;
-  background-color: rgb(252, 250, 240);
-  border: 2px solid #ccc;
-  border-radius: 10px;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border: 1px solid rgba(255, 255, 255, 0.74);
   padding: 2%;
 }
 .main_element:hover {
-  box-shadow: 2px 4px 8px black;
-  border: 2px solid rgb(43, 36, 36);
+  box-shadow: 2px 4px 6px black;
+  border: 1px solid rgb(43, 36, 36);
 }
 
 .a_grid {
@@ -219,19 +255,26 @@
   grid-template-rows: 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
-  background-image: url("https://alfapeople.com/me/wp-content/uploads/sites/25/2016/01/AlfaPeople-Best-Practice-JavaScript-Code-Quality-780x551.jpg");
+  background-image: url("./img/bg.svg");
   padding: 1% 0% 1% 0%;
 }
 
 .main_grid_lesson {
+  margin-top: 10%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 0.5fr 2.3fr 0.2fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-area: 1 / 2 / 2 / 3;
-  background-color: #f1faeeaf;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border: 1px solid rgba(255, 255, 255, 0.74);
   padding: 2%;
+  z-index: 0;
 }
 
 .lesson_image {
@@ -279,6 +322,95 @@
   font-size: 125%;
 }
 
+.form_label {
+  display: block;
+}
+.inputs {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+.inputs:focus {
+  border: 3px solid #555;
+  background-color: rgb(206, 224, 224);
+}
+#ad {
+  width: 30%;
+}
+#mail {
+  width: 50%;
+}
+#message {
+  width: 90%;
+  height: 10vw;
+  display: block;
+}
+#submit {
+  display: block;
+  margin-top: 2%;
+}
+.ilk_ders {
+  margin-top: 10%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ilk_derslink {
+  text-decoration: none;
+  color: white;
+}
+.aboutContainer {
+  display: grid;
+  grid-template-columns: 0.4fr 2.2fr 0.4fr;
+  grid-template-rows: 1fr;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  background-image: url("./img/bg.svg");
+  padding: 1% 0% 1% 0%;
+}
+
+.main_grid_about {
+  margin-top: 10%;
+  padding: 2%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.4fr 1.6fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-area: 1 / 2 / 2 / 3;
+  background: rgba(255, 255, 255, 0.58);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.4px);
+  -webkit-backdrop-filter: blur(3.4px);
+  border: 1px solid rgba(255, 255, 255, 0.36);
+}
+
+.about_text {
+  grid-area: 1 / 1 / 2 / 4;
+  background-color: whitesmoke;
+  margin-bottom: 9%;
+  padding: 2%;
+  border-radius: 16px;
+}
+
+.about_image {
+  grid-area: 2 / 1 / 4 / 4;
+}
+
+#about {
+  font-size: 20px;
+}
+.album {
+  width: 50%;
+  border-radius: 16px;
+}
+
 /*-------------------------------------------------------------------------------------------------------------------*/
 .grid-container {
   display: grid;
@@ -286,7 +418,12 @@
   grid-template-rows: 0.5fr 1.5fr;
   grid-auto-columns: 1fr;
   gap: 0px 0px;
-  background-color: #b7b7a4;
+  /* From https://css.glass */
+  background: rgba(28, 83, 142, 0.4);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.9px);
+  -webkit-backdrop-filter: blur(12.9px);
+  border: 1px solid rgba(29, 62, 44, 0.36);
   grid-auto-flow: row;
   padding: 2%;
 }
