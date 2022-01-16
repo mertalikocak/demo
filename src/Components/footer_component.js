@@ -12,7 +12,7 @@ function Footer() {
           Mert Ali, Savaş, Umut Emre ve Mustafa Ege olarak bilgisayar
           mühendisliği 3. sınıf öğrencileriyiz. Bu siteyi beraber tasarladık.
           Amacımız genel olarak yazılım dillerini tanıtmak ve python,java,C#
-          için ufak bir ders vermektir.{" "}
+          için ufak bir ders vermektir.
         </div>
       </div>
       <div className="footer_center border_left">

@@ -7,7 +7,7 @@ toggle between hiding and showing the dropdown content */
 
 function Header() {
   function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
+    document.getElementById("myDropdown").classList.toggle("show"); //dropdown yapan fonksiyon
   }
 
   // Close the dropdown menu if the user clicks outside of it
@@ -24,20 +24,25 @@ function Header() {
     }
   };
   return (
-    <div class="headerContainer">
+    <div class="headerContainer sticky-top">
+      {/* menüyü yapışık yapıyor */}
       <div class="header_logo">
         <Link to="/" className="logo">
           &lt;Div Or Span/&gt;
         </Link>
       </div>
       <div class="header_menu">
-        <Link to="/" className="menu_item">
-          Ana Sayfa
-        </Link>
-        <div className="dropdown">
-          <button onClick={myFunction} class="dropbtn">
+        <div class="menu_item1">
+          <Link to="/" className="menu_item">
+            {/* menü butonları */}
+            Ana Sayfa
+          </Link>
+        </div>
+        <div class="menu_item2">
+          <span onClick={myFunction} class="dropbtn">
+            {/* menü butonları */}
             Dersler ↓
-          </button>
+          </span>
           <div id="myDropdown" class="dropdown-content">
             <Link class="dropdown-item" to="/course/cs">
               C#
@@ -50,14 +55,21 @@ function Header() {
             </Link>
           </div>
         </div>
-        <Link to="/about" className="menu_item">
-          Hakkımızda
-        </Link>
-        <Link to="/contact" className="menu_item">
-          İletişim
-        </Link>
+        <div class="menu_item3">
+          <Link to="/about" className="menu_item">
+            {/* menü butonları */}
+            Hakkımızda
+          </Link>
+        </div>
+        <div class="menu_item4">
+          <Link to="/contact" className="menu_item">
+            {/* menü butonları */}
+            İletişim
+          </Link>
+        </div>
       </div>
       <div class="header_text">
+        {/* slogan */}
         <p>
           <i>GELECEK YAZILIM İLE ŞEKİLLENECEK</i>
         </p>

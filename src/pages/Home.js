@@ -5,11 +5,16 @@ function Home() {
   return (
     <React.Fragment>
       <div class="homeContainer">
+        {" "}
+        {/* Grid mantığıyla bir anasayfa tasarladık */}
         <div class="right_grid"></div>
         <div class="left_grid"></div>
         <div class="main_grid">
+          {/* Esas içerikler burda */}
           <div class="a_grid main_element">
+            {/* Main grid 3 adet gridten oluşuyor (a,b,c) */}
             <div class="a_grid_image">
+              {/* Bu gridler kendi içinde img text ve button olmak üzere 3 gridden oluşuyor */}
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/C_Sharp_wordmark.svg/1200px-C_Sharp_wordmark.svg.png"
                 alt="C# image"
@@ -17,6 +22,7 @@ function Home() {
               />
             </div>
             <div class="a_grid_text">
+              {/* yazı kısmı  */}
               <h2>C#</h2>
               <p>
                 C#, Microsoft tarafından.NET Teknolojisi için geliştirilmiş yeni
@@ -30,7 +36,9 @@ function Home() {
               <br />
             </div>
             <div className="a_grid_button">
+              {/* katıl kısmı */}
               <Link to="/course/cs" className="katilbutonu">
+                {/* Butonlarda yönlendirme yapıyoruz */}
                 <span>Derse Başla</span>
               </Link>
             </div>
@@ -61,7 +69,7 @@ function Home() {
               <br />
             </div>
             <div className="b_grid_button">
-              <Link to="/course/js#" className="katilbutonu">
+              <Link to="/course/js" className="katilbutonu">
                 <span>Derse Başla</span>
               </Link>
             </div>

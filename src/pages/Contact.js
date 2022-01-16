@@ -7,12 +7,14 @@ function Contact() {
   return (
     <React.Fragment>
       <div class="homeContainer">
+        {/* İletişim kısmı */}
         <div class="right_grid"></div>
         <div class="left_grid"></div>
         <div class="main_grid_lesson">
           <div className="lesson_text">
             <h2>Bizimle iletişime geç :)</h2>
             <form id="iletisim" onSubmit={MesajBasarili}>
+              {/* Form elemanlarını kullanarak iletişim formu oluşturduk. */}
               <label for="ad" className="form_label">
                 Adınızı Girin(*)
               </label>
@@ -62,11 +64,3 @@ function Contact() {
   );
 }
 export default Contact;
-{
-  /* <form>
-        <label for="ad">Adınızı Girin</label>
-        <input type="text" id="ad" name="ad" className="inputs" />
-        <label for="ad">Soyadınızı Girin</label>
-        <input type="text" id="sad" name="sad" className="inputs" />
-      </form> */
-}

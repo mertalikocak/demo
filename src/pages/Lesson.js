@@ -3,22 +3,24 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 function Lesson() {
-  const { course, lessonNo } = useParams();
-  let imglink = "";
-  let content = "";
-  let first_lesson = "";
-  let last_lesson = "";
-  let previous_lesson = "";
-  let next_lesson = "";
-  let first_number = "";
-  let mid_number = "";
-  let last_number = "";
+  const { course, lessonNo } =
+    useParams(); /* use param ile 2 tane değişken aldık. ders ismi ve dersin numarası */
+  let imglink = ""; /* resim yolunu tutuyor */
+  let content = ""; /* içeriği tutuyor */
+  let first_lesson = ""; /* ilk dersin linki */
+  let last_lesson = ""; /* son dersin linki */
+  let previous_lesson = ""; /* önceki dersin linki */
+  let next_lesson = ""; /* sonraki dersin linki */
+  let first_number = ""; /* navigatordaki ilk sayı */
+  let mid_number = ""; /* navigatordaki 2.sayı */
+  let last_number = ""; /* navigatordaki 3.sayı */
 
-  const cs_lessons = [];
+  const cs_lessons = []; /* dersleri tutan listeler */
   const js_lessons = [];
   const py_lessons = [];
 
-  cs_lessons[0] = `<h1> C# Nedir?</h1>
+  /* dillerin ilk 2 derslerini biz atadık */
+  cs_lessons[0] = `<h1>1. Ders C# Nedir?</h1>
   <p>
     <strong>C#,</strong>&nbsp;Microsoft tarafından
     <strong>
@@ -104,7 +106,7 @@ function Lesson() {
   </table>
   Bu dersin sahibi:
               <a href="https://www.azkod.com/csharp/c-nedir"> azkod.com</a>`;
-  cs_lessons[1] = `<h1> C# Ekrana Yazdırma</h1>
+  cs_lessons[1] = ` <h1>2. Ders C# Ekrana Yazdırma</h1>
   <p>
     Programlamada yaptığımız işlerin kullanıcı tarafından
     görüntülenmesini isteriz. Bu işlem için ise
@@ -204,7 +206,7 @@ function Lesson() {
   </table>Bu dersin sahibi:
   <a href="https://www.azkod.com/csharp/c-nedir"> azkod.com</a>`;
 
-  js_lessons[0] = `<h1> JavaScript Nedir?</h1>
+  js_lessons[0] = `<h1> 1. Ders JavaScript Nedir?</h1>
 
 <p>
   JavaScript kısaca kullanıcıyla <strong>etkileşim </strong>
@@ -313,7 +315,7 @@ Bu dersin sahibi:
 <a href="https://www.azkod.com/javascript/javascript-nedir">
   azkod.com
 </a>`;
-  js_lessons[1] = `<h1> JS Nasıl Kullanılır?</h1>
+  js_lessons[1] = `<h1> 2. Ders JS Nasıl Kullanılır?</h1>
 
 <p>
   <strong>JavaScript kodları</strong>,&nbsp; kullanıcıyla
@@ -468,7 +470,7 @@ Bu dersin sahibi:
   azkod.com
 </a>`;
 
-  py_lessons[0] = `<h1> Python Nedir?</h1>
+  py_lessons[0] = ` <h1> 1. Ders Python Nedir?</h1>
   <p>
     Python dili&nbsp;bir programlama dilidir. Python dili bir çok
     uygulama geliştirimek için kullanılabileceği gibi&nbsp;&nbsp;web
@@ -571,7 +573,7 @@ Bu dersin sahibi:
   Bu dersin sahibi:
   <a href="https://www.azkod.com/python/python-nedir"> azkod.com </a>`;
 
-  py_lessons[1] = `<h1> Python Kurulumu</h1>
+  py_lessons[1] = ` <h1> 2. Ders Python Kurulumu</h1>
   <p>
     Python programının kurulumunu yapmak için kendi sayfasından
     indirmenizi ve kurulum yapmanızı tavsiye ederim. Python
@@ -659,10 +661,13 @@ Bu dersin sahibi:
   Bu dersin sahibi:
   <a href="https://www.azkod.com/python/python-nedir">azkod.com</a>`;
 
+  /* geri kalan dersler için random metin ataması yapılıyor. */
   for (let i = 2; i < 5; i++) {
-    cs_lessons[
-      i
-    ] = `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti porro fuga officia illo sint, harum mollitia iste asperiores dolorum alias, doloribus fugiat architecto sequi. Numquam sit unde quae placeat laborum!
+    cs_lessons[i] =
+      i +
+      1 +
+      ".Ders " +
+      `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti porro fuga officia illo sint, harum mollitia iste asperiores dolorum alias, doloribus fugiat architecto sequi. Numquam sit unde quae placeat laborum!
 Debitis, natus, nemo alias rerum similique eum facilis at, optio maiores enim dicta veniam nam suscipit tenetur illo odio porro et officiis accusantium! Vero nemo provident nostrum fugiat corporis? Vel.
 Sit sunt quam nemo corporis! Incidunt at fuga itaque eius, dolore asperiores corporis! Repellat nisi ratione, harum in quibusdam incidunt officiis alias saepe iure assumenda nobis consequatur atque quia aut.
 Saepe esse minima eveniet iure? Laborum et illo cupiditate quis, quidem temporibus facilis praesentium? Voluptas perferendis hic veniam odit ipsa magnam voluptate facere quasi delectus, ducimus in aut ipsum laudantium?
@@ -677,34 +682,37 @@ Ut, illo adipisci soluta numquam placeat excepturi eos repudiandae aut debitis. 
   }
 
   if (course == "cs") {
-    if (parseInt(lessonNo) > cs_lessons.length || parseInt(lessonNo) == 0) {
-      console.log("wrong");
+    if (parseInt(lessonNo) > cs_lessons.length || parseInt(lessonNo) <= 0) {
+      /* 0dan kücük veya kurs sayısından büyük değerler için 404 çağırılır */
       window.location.href = "/404";
     } else {
       imglink = require("../img/cs_lesson.jpg");
-      first_lesson = "/course/cs/1";
+      first_lesson = "/course/cs/1"; /* ilk dersin linkini atıyoruz  */
       last_lesson = "/course/cs/" + cs_lessons.length;
+      /* son dersin linkini string birleştirmeyle atıyoruz */
 
       if (parseInt(lessonNo) == cs_lessons.length) {
-        previous_lesson = "/course/cs/" + (parseInt(lessonNo) - 1);
-        next_lesson = "/course/cs/" + parseInt(lessonNo);
-        first_number = parseInt(lessonNo) - 2;
-        mid_number = parseInt(lessonNo) - 1;
-        last_number = parseInt(lessonNo);
+        //eğer son dersteysek
+        previous_lesson = "/course/cs/" + (parseInt(lessonNo) - 1); // önceki ders o ders nosunun 1 eksiği
+        next_lesson = "/course/cs/" + parseInt(lessonNo); //sonraki ders olmadığı için sonraki dersede kendisini atıyoruz
+        first_number = parseInt(lessonNo) - 2; //navigatordaki ilk numara  o anki dersin 2 eksiği
+        mid_number = parseInt(lessonNo) - 1; //2.numara 1 eksiği
+        last_number = parseInt(lessonNo); //son numara kendisi
       } else if (parseInt(lessonNo) == 1) {
-        previous_lesson = "/course/cs/" + parseInt(lessonNo);
-        next_lesson = "/course/cs/" + (parseInt(lessonNo) + 1);
-        first_number = parseInt(lessonNo);
-        mid_number = parseInt(lessonNo) + 1;
-        last_number = parseInt(lessonNo) + 2;
+        //eğer ilk dersteysek
+        previous_lesson = "/course/cs/" + parseInt(lessonNo); //önceki ders olmadığından kendisi atıyoruz
+        next_lesson = "/course/cs/" + (parseInt(lessonNo) + 1); //sonraki ders 1 fazlası
+        first_number = parseInt(lessonNo); //ilk numara kendisi
+        mid_number = parseInt(lessonNo) + 1; //ortadaki numara 1 fazlası
+        last_number = parseInt(lessonNo) + 2; //sondaki numara 2 fazlası
       } else {
-        previous_lesson = "/course/cs/" + (parseInt(lessonNo) - 1);
-        next_lesson = "/course/cs/" + (parseInt(lessonNo) + 1);
-        first_number = parseInt(lessonNo) - 1;
-        mid_number = parseInt(lessonNo);
-        last_number = parseInt(lessonNo) + 1;
+        //eğer diğer derslerdeysek
+        previous_lesson = "/course/cs/" + (parseInt(lessonNo) - 1); //önceki ders 1 eksiği
+        next_lesson = "/course/cs/" + (parseInt(lessonNo) + 1); //sonraki ders 1 fazlası
+        first_number = parseInt(lessonNo) - 1; //ilk numara bir eksiği
+        mid_number = parseInt(lessonNo); //ortadaki numara kendisi
+        last_number = parseInt(lessonNo) + 1; //son numara bir fazlası
       }
-      console.log(last_lesson);
 
       content = cs_lessons[parseInt(lessonNo) - 1];
     }
@@ -783,7 +791,7 @@ Ut, illo adipisci soluta numquam placeat excepturi eos repudiandae aut debitis. 
         <div class="main_grid_lesson">
           <div class="lesson_image">
             <img
-              src={imglink}
+              src={imglink} /* img linki burda veriyoruz */
               alt="csharp"
               width="90%"
               className="lesson_png"
@@ -797,17 +805,20 @@ Ut, illo adipisci soluta numquam placeat excepturi eos repudiandae aut debitis. 
           </div>
 
           <div class="navigator">
+            {/* navigator classı */}
+            {/* en başa gittiğimiz buton */}
             <span className="navigator-item">
               <Link to={first_lesson} className="navigator-item-link">
                 &lt; &lt;
               </Link>
             </span>
+            {/* bi önceki derse gittiğimiz buton */}
             <span className="navigator-item">
               <Link to={previous_lesson} className="navigator-item-link">
                 &lt;
               </Link>
             </span>
-
+            {/* bir önceki derse yönlendiriyor ama ilk dersteyken kendine yönlendiriyor. */}
             <span className="navigator-item">
               <Link
                 to={"/course/" + course + "/" + first_number}
@@ -816,6 +827,7 @@ Ut, illo adipisci soluta numquam placeat excepturi eos repudiandae aut debitis. 
                 {first_number}
               </Link>
             </span>
+            {/* Kendsini tutuyor. İlk veya sondaki dersteysek sonraki veya önceki dersi tutuyor. */}
             <span className="navigator-item">
               <Link
                 to={"/course/" + course + "/" + mid_number}
@@ -824,6 +836,7 @@ Ut, illo adipisci soluta numquam placeat excepturi eos repudiandae aut debitis. 
                 {mid_number}
               </Link>
             </span>
+            {/* sonraki dersi tutuyor. ama son dersteysek kendine yönlendirir */}
             <span className="navigator-item">
               <Link
                 to={"/course/" + course + "/" + last_number}
@@ -832,11 +845,13 @@ Ut, illo adipisci soluta numquam placeat excepturi eos repudiandae aut debitis. 
                 {last_number}
               </Link>
             </span>
+            {/* sonraki dersi tutuyor. ama son dersteysek kendine yönlendirir */}
             <span className="navigator-item">
               <Link to={next_lesson} className="navigator-item-link">
                 &gt;
               </Link>
             </span>
+            {/* en sondaki derse yönlendirir */}
             <span className="navigator-item">
               <Link to={last_lesson} className="navigator-item-link">
                 &gt; &gt;

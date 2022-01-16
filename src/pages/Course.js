@@ -3,8 +3,10 @@ import { Link, useParams } from "react-router-dom";
 
 function Overview() {
   const { course } = useParams();
+  {
+    /* Linkten parametre alma fonksiyonu */
+  }
 
-  console.log(course);
   const py = `<h3>Öğrenecekleriniz</h3>
   <ul>
   <li>
@@ -23,19 +25,19 @@ function Overview() {
 <h3>Dersler</h3>
 <ol>
   <li>
-    <a href="/">Python Nedir?</a>
+    Python Nedir?
   </li>
   <li>
-  <a href="/">Python Kurulumu</a>
+  Python Kurulumu
   </li>
   <li>
-  <a href="/">Python Yorum</a>
+ Python Yorum
   </li>
   <li>
-  <a href="/">Python Değişkenler</a>
+ Python Değişkenler
   </li>
   <li>
-  <a href="/">Python İşlemler</a>
+  Python İşlemler
   </li>
 </ol>
 <br/>
@@ -102,16 +104,16 @@ function Overview() {
 <h3>Dersler</h3>
 <ol>
   <li>
-    <a href="/home">JavaScript Nedir?</a>
+    JavaScript Nedir?
   </li>
   <li>
-    <Link to="">JS Nasıl Kullanılır?</Link>
+    JS Nasıl Kullanılır?
   </li>
   <li>
-    <Link to="">JS Yazım Kuralları</Link>
+    JS Yazım Kuralları
   </li>
   <li>
-    <Link to="">JavaScript Yorum</Link>
+    JavaScript Yorum
   </li>
 </ol>
 <br/>
@@ -121,12 +123,25 @@ function Overview() {
 <br>
 <h3>Bu kurs kimler için uygun:</h3>
 <ul><li>Frontend uzmanı olmak isteyen herkes</li>
-<li>Javascipt ve Javascript türevlerine (NodeJs, Angular, React, VueJs) ilgi duyan herkes katılabilir.</li>`;
+<li>Javascipt ve Javascript türevlerine (NodeJs, Angular, React, VueJs) ilgi duyan herkes katılabilir.</li></ul>`;
+
+  // Sayfaların içeriklerini değişkenlere atadık
+
   let now = "";
-  var imglink = "";
-  var first_lesson = "";
+
+  // O anki içeriği bu değişken tutacak
+
+  let imglink = "";
+
+  //  kursun resim yolunu bu değişken tutacak
+
+  let first_lesson = "";
+
+  // kursa yönlendirme amaçlı ilk dersi tutacak
 
   if (course === "py") {
+    // linke göre  içeriklerin ataması yapılıyor
+
     now = py;
     imglink = require("../img/py_lesson.png");
     first_lesson = "/course/py/1";
@@ -141,14 +156,14 @@ function Overview() {
   } else {
     window.location.href = "/404";
   }
-  const list = { cs, js, py };
+
   return (
     <div class="languageContainer">
       <div class="left_grid"></div>
       <div class="right_grid"></div>
       <div class="main_grid_lesson">
         <div class="lesson_image">
-          <img
+          <img /* img link resmin yolunu veriyor */
             src={imglink}
             alt="course_image"
             width="90%"
@@ -158,11 +173,14 @@ function Overview() {
         <div class="lesson_text">
           <div
             class="col-lg-10"
-            dangerouslySetInnerHTML={{ __html: now }}
+            dangerouslySetInnerHTML={{
+              __html: now,
+            }} /* html olarak kodları içeriye setliyoruz */
           ></div>
 
           <div class="col-lg-10">
             <Link to={first_lesson} className="ilk_derslink">
+              {/* first lesson ilk dersin yolunu tutuyor. */}
               <button type="button" class="btn btn-primary btn-lg ilk_ders ">
                 Derse Başla
               </button>
